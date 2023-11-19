@@ -31,11 +31,11 @@ export const App = () => {
   };
 
   useEffect(() => {
+    if (valueSearch === '') {
+      return;
+    }
+    const valueAfterSlash = valueSearch.split('/').pop();
     const fetchData = async () => {
-      if (valueSearch === '') {
-        return;
-      }
-      const valueAfterSlash = valueSearch.split('/').pop();
       try {
         setIsLoading(true);
         setIsError(false);
